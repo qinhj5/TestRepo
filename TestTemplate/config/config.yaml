@@ -1,0 +1,5 @@
+testUrl: 'https://www.baidu.com/'
+testTitle: 'Test Report'
+testVer: 'v0.1'
+testPattern: 'test*.py'
+csvPath: ../data/login.csv
