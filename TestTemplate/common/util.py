@@ -38,17 +38,19 @@ class Util:
         logger.info('截图保存为：' + now + '.png')
 
     @classmethod
-    def get_data_by_row(cls, csv_path, line):
+    def get_csv_data(cls, csv_path):
         """
-        读取指定csv文件的测试用例数据
+        读取csv文件中的测试用例数据
         """
         logger.info('==========读取数据==========')
+        res = []
         with open(csv_path, 'r', encoding='utf-8-sig') as f:
             reader = csv.reader(f)
             for index, row in enumerate(reader, 1):
-                if index == line:
-                    logger.info('读取第{}行数据：{}'.format(line, row))
-                    return row
+                res.append(row)
+            logger.info('==========读取完毕==========')
+            return res
+
 
 # 获取common文件夹路径
 common_dir = os.path.dirname(os.path.abspath(__file__))
